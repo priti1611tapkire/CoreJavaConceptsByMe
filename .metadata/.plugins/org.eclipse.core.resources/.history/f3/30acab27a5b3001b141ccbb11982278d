@@ -1,0 +1,29 @@
+package comex;
+
+public class WithFinally {
+
+	public void m1() {
+		m2();
+		System.out.println("m1");
+	}
+	
+	public void m2(){
+		try{
+		System.out.println(10/0);
+		}
+		catch (ArithmeticException e) {
+			// TODO: handle exception
+			System.out.println("handle");
+		}
+		finally{
+			System.out.println("in finally");
+			String s=null;
+			System.out.println(s.hashCode());
+		}
+		
+	}
+	public static void main(String[] args) {
+		WithFinally wf=new WithFinally();
+		wf.m1();
+	}
+}

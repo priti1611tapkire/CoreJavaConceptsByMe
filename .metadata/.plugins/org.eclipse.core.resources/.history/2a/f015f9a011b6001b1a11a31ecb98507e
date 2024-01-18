@@ -1,0 +1,37 @@
+package com.map;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class A_generic {
+	public static void main(String[] args) {
+		ConcurrentHashMap<Integer, String> m=new ConcurrentHashMap<>();
+		m.put(5, "ABC");
+		m.put(12, "Xyz");
+		m.put(16, "PQR");
+
+		System.out.println(m);
+
+		m.put(5, "leena");
+		System.out.println(m);
+
+		//		 Set<Integer>keys=m.keySet();
+		//		 /*
+		//		 for(int key:keys){
+		//			 System.out.println(key);
+		//			 String val=m.get(key);
+		//			 System.out.println(val);}*/
+		//		Iterator<Integer>itr=keys.iterator();//
+		//		 while(itr.hasNext())//
+		//		 {
+		//			 int key=itr.next();
+		//			 System.out.println((key));
+		//			 String val=m.get(key);
+		//			 System.out.println(val);
+		//		 }
+	}
+
+}

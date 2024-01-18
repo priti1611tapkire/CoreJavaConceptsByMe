@@ -1,0 +1,8 @@
+package com.calculator;
+
+public abstract class A implements Calculator  {
+	public void add(){ 
+		
+	}  
+
+}

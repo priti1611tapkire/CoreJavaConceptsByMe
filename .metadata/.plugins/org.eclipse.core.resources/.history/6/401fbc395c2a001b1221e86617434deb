@@ -1,0 +1,14 @@
+package com.costum;
+
+public class EmidSort implements Comparable<Employee> {
+
+	/*@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		//Employee ee=(Employee)o;
+		return o.getEmid() ;
+	}*/
+
+	
+
+}

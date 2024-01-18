@@ -1,0 +1,9 @@
+package com.map;
+
+import java.util.HashMap;
+
+public class Hashmam {
+public static void main(String[] args) {
+	HashMap m=new HashMap<>();
+}
+}

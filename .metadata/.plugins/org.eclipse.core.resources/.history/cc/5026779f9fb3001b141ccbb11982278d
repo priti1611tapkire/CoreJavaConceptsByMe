@@ -1,0 +1,21 @@
+package comex;
+
+public class Throwsk {
+
+	public void m1() throws Exception{
+		m2();
+		System.out.println("m1");
+	}
+	
+	public static void m2() throws Exception{
+		System.out.println("52");
+		System.out.println(10/0);
+		System.out.println("52222");
+	}
+	
+	public static void main(String[] args) throws Exception {
+		Throwsk t=new Throwsk();
+		t.m1();
+		System.out.println("main");
+	}
+}

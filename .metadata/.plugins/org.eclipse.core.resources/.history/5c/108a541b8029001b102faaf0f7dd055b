@@ -1,0 +1,14 @@
+package com.map;
+
+public class Test3 {
+	public static void main(String[] args) {
+		Details d=new Details();
+		
+		Stud stu1=d.det();
+		 
+		d.det2(stu1);
+	}
+
+	
+
+}

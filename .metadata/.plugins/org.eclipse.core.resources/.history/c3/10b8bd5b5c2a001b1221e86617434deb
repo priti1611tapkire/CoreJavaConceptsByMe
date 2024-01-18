@@ -1,0 +1,16 @@
+package com.costum;
+
+import java.util.Comparator;
+
+public class EmidSort implements Comparator<Employee> {
+
+	/*@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		//Employee ee=(Employee)o;
+		return o.getEmid() ;
+	}*/
+
+	
+
+}

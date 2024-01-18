@@ -1,0 +1,11 @@
+package com.treeset;
+
+public class Test {
+	public static void main(String[] args) { 
+		Employee e1=new Employee();
+		e1.setEmid(22);
+		e1.setEmname("Neha");
+		e1.setSalary(25000);
+	} 
+
+}

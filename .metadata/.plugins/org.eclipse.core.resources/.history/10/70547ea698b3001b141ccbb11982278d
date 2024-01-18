@@ -1,0 +1,6 @@
+package comex;
+
+public class ExceptionInInitializer {
+static int i=10/0;
+
+}

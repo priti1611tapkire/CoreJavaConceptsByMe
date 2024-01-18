@@ -1,0 +1,10 @@
+package comex;
+
+public class FinalK {
+final int i=null;
+
+private void Syso() {
+	// TODO Auto-generated method stub
+
+}
+}

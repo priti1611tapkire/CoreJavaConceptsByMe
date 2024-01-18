@@ -1,0 +1,28 @@
+package com.map;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+
+public class Details1 {
+	public 	Map det(){
+		List list=new ArrayList();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter roll no: ");
+		int a=sc.nextInt();
+		System.out.println("Enter Name:  ");
+		String s=sc.next();
+		Stud stu=new Stud();
+		stu.setRollno(a);
+		stu.setName("PRIT");
+		
+		list.add(stu);
+	
+		Map m=new HashMap();
+		m.put(1, list);
+		return m; 
+	}
+}

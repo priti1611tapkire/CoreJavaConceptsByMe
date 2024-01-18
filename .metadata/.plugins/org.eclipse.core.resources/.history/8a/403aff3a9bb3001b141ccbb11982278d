@@ -1,0 +1,9 @@
+package comex;
+
+public class FinalK {
+	final int i=null;
+
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,9 @@
+package comex;
+
+public class IlligalArguException {
+	public static void main(String[] args) {
+		Thread t=new Thread();
+		t.setPriority(5);
+		t.setPriority(50);
+	}
+}

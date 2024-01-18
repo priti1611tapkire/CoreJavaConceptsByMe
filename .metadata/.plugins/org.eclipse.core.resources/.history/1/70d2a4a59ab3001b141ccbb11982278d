@@ -1,0 +1,21 @@
+package comex;
+
+import java.util.Scanner;
+
+public class CustomizeException {
+
+	public static void main(String[] args) {
+		int age=Integer.parseInt(args[0]);
+		Scanner sc=new Scanner(System.in)
+		if(age<18){
+			throw new AgeNotValidEx("i apologize pls wait more for some time");
+		}
+		else if (age>18){
+			throw new AgeValidException("plz continue");
+		}
+		else
+		{
+			System.out.println("plz continue serach for future oppoutinties ");
+		}
+	}
+}

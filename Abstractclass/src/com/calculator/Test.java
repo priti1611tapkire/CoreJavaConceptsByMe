@@ -1,0 +1,50 @@
+package com.calculator;
+
+import java.util.Scanner;
+
+public class Test implements Calculator  {
+static int a;
+static int b;
+
+	@Override
+	public void add() {
+		
+		// TODO Auto-generated method stub
+		System.out.println("Addition: "+(a+b));
+	}
+
+	@Override
+	public void sub() {
+		// TODO Auto-generated method stub
+		System.out.println("Sub: "+(a-b));
+	}
+
+	@Override
+	public void mul() {
+		// TODO Auto-generated method stub
+		System.out.println("mul: "+(a*b));
+	}
+
+	@Override
+	public void div() {
+		// TODO Auto-generated method stub
+		System.out.println("div: "+(a/b));
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter First Number:  ");
+		 a=sc.nextInt();
+		System.out.println("Enter Second Number:  ");
+		 b=sc.nextInt();
+		
+		Test t=new Test();
+		
+		t.add();
+		t.sub();
+		t.mul();
+		t.div();	
+	}
+	
+	
+
+}

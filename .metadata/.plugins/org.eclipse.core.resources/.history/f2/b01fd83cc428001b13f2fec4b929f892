@@ -1,0 +1,67 @@
+package com.map;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Country {
+	public static void main(String[] args) {
+		List<String> mh=new ArrayList<String>();
+		mh.add("Pune");
+		mh.add("Mumbai");
+		mh.add("Nagpur");
+
+		List<String> jh=new ArrayList<String>();
+		jh.add("Ranchi");
+		jh.add("Jamshedpur");
+
+		
+
+		Map<String, List<String>> india=new HashMap<>();
+		india.put("maharashtra", mh);// key=maharashtra AND val==mh==List<String> 
+		india.put("jharkhand", jh);// key=jharkhand AND val==jh==List<String> 
+
+		Set<String> keys=india.keySet();// india as a variable 
+
+		Iterator<String> itr=keys.iterator(); //india==keys
+		while(itr.hasNext()){// jharkhand....true
+			String key=(String)itr.next();// jh
+			System.out.println(key);//
+			List<String> val=india.get(key);
+			System.out.println(val);
+			Iterator<String> itr1=val.iterator();
+			while(itr1.hasNext()){
+				String val1=itr1.next();
+				System.out.println(val1);
+			}
+		}
+
+
+	}
+
+}
+
+
+	/*for(String key:keys){
+
+	System.out.println(key);
+	 List val=india.get(key);
+	 System.out.println(" "+val );
+
+		}*/
+
+
+
+
+
+
+
+
+
+
+
+

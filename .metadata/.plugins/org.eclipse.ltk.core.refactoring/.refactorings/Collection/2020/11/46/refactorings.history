@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.withiteratorwithloop&apos; to &apos;Collection/src/com.withiteratorwithloop&apos;&#x0D;&#x0A;- Original project: &apos;Collection&apos;&#x0D;&#x0A;- Destination element: &apos;Collection/src/com.withiteratorwithloop&apos;&#x0D;&#x0A;- Original element: &apos;Collection/src/com.withiteratorwithloop&apos;" description="Copy package" destination="/src&lt;com.withiteratorwithloop" element1="/src&lt;com.withiteratorwithloop" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1605167677857" version="1.0"/>
+</session>

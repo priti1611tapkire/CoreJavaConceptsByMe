@@ -1,0 +1,14 @@
+package com.costum;
+
+import java.util.Comparator;
+
+public class EmsalarySort implements Comparator<Employee> {
+
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		//Employee ee1=(Employee)o;
+		return (int) o.getSalary();
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.mapz;
+import java.util.*;
+public class Country {
+	public static void main(String[] args) {
+
+		Map<Integer, String> mh=new HashMap<>();
+		mh.put(1,"Pune");
+		mh.put(2, "Abad");
+		mh.put(3, "Mumbai");
+
+		Map<Integer, String> jh=new HashMap<>();
+		jh.put(4, "Ranchi");
+		jh.put(5, "Jamshedpur");
+
+		Map<Integer, Map<Integer,String>> india=new HashMap<>();
+		india.put(10, mh);
+		india.put(20, jh);
+
+		Map<Integer, String> ny=new HashMap<>();
+		ny.put(1,"san diago");
+		ny.put(2, "arizona");
+		ny.put(3, "orlans");
+		Map<Integer, String> california=new HashMap<>();
+		california.put(4, "los angels");
+		california.put(5, "vegas");
+
+
+		Map<Integer, Map<Integer,String>> us=new HashMap<>();
+		us.put(101, ny);
+		us.put(202, california);
+
+		Map<Integer, Map<Integer, Map<Integer,String>>> world=new HashMap<>();
+		world.put(125, india);
+		world.put(225, us);
+
+		Set<Integer> keys=world.keySet();
+		/*for(int key:keys){
+			System.out.println(key);
+			Map<Integer, Map<Integer,String>> country=world.get(key);
+			Set<Integer> countrykeys=country.keySet();
+			for(int countrys:countrykeys){
+				System.out.println(countrys);
+				Map<Integer, String> state=country.get(countrys);
+				Set<Integer>statekeys=state.keySet();
+				for(int statekey:statekeys){
+					System.out.println(statekey);
+					//System.out.println(state.get(statekey));
+				}
+
+			}
+		}*/
+		
+		Iterator<Integer> itr=keys.iterator();
+		while(itr.hasNext()){
+			int country=itr.next();
+			System.out.println(country);
+		}
+	}
+
+
+
+}
+

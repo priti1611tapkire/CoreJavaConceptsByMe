@@ -1,0 +1,287 @@
+package com.braindatawire.collegemanagement.serviceImpl;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import java.util.Scanner;
+import com.braindatawire.collegemanagement.model.Batch;
+import com.braindatawire.collegemanagement.model.Course;
+import com.braindatawire.collegemanagement.model.Faculty;
+import com.braindatawire.collegemanagement.model.Student;
+import com.braindatawire.collegemanagement.service.Cjc;
+
+public class Karvenagar implements Cjc {
+	Scanner sc = new Scanner(System.in);
+	List<Course> clist = new ArrayList<>();
+	List<Faculty> flist = new ArrayList<>();
+	List<Batch> blist = new ArrayList<>();
+	List<Student> slist = new ArrayList<>();
+	// implements all methods here
+	int course1 = 0;
+	int faculty1 = 0;
+	int batch1=0;
+	int stu1=0;
+	public void addCourse() {
+		Course c = new Course();
+		System.out.println("-----------FILL COURSE DETAILS HERE------------");
+		// set course data using scanner here and add into list here
+		System.out.println("Enter Course ID:  ");
+		int a = sc.nextInt();
+		c.setCid(a);
+		System.out.println("Enter Course Name:  ");
+		String b = sc.next();
+		c.setCname(b);
+		System.out.println("---------Course details Added susccesfully--------------");
+		clist.add(c);
+
+		// NOTE: Don't use loop here to add data at a time only one data wants
+		// to add
+		course1++;
+	}
+
+	public void viewCourse() {
+
+		if (course1 != 0) {
+			// get course data using iterartor here
+			Iterator<Course> itr = clist.iterator();
+			while (itr.hasNext()) {
+				Course c1 = (Course) itr.next();
+				System.out.println("Course Id: " + c1.getCid());
+				System.out.println("Course Name: " + c1.getCname());
+				System.out.println("-------------------------------------");
+			}
+			System.out.println("-------  COURSE DETAILS AVAILABLE ABOVE--------");
+		}
+		else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		}
+	}
+
+	public void addFaculty() {
+		int cid=0;
+		if (course1 != 0) {
+			System.out.println("---------FILL FACULTY DETAILS HERE--------");
+			Faculty f = new Faculty();
+			System.out.println("Enter faculty ID:   ");
+			int m = sc.nextInt();
+			f.setFid(m);
+			System.out.println("Enter Faculty Name: ");
+			String n = sc.next();
+			f.setFname(n);
+			System.out.println("Enter cousre Id");
+			int course_id=sc.nextInt();
+			Iterator<Course> itr1 = clist.iterator();
+			while(itr1.hasNext()){
+				Course c2 = itr1.next();
+				cid=c2.getCid();
+				if(course_id==c2.getCid()){
+					f.setCourse(c2);
+					System.out.println("----------Faculty details Added susccesfully----------");
+					flist.add(f);
+					faculty1++;
+					System.out.println("---------------------------------------------------------");
+				}
+
+			}
+			if(course_id!=cid){
+				System.out.println("----------please enter valid course id----------");
+			}
+
+		}
+		else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		
+		}
+
+	}
+
+	// set faculty data using scanner here and add into list here
+	// NOTE: Don't use loop here to add data at a time only one data wants to
+	// add
+
+	public void viewFaculty() {
+		// get faculty data using iterartor here
+		if (course1 != 0) {
+			if (faculty1 != 0) {
+				Iterator<Faculty> itr2 = flist.iterator();
+				while (itr2.hasNext()) {
+					Faculty f1 = (Faculty) itr2.next();
+					System.out.println("Faculty Id: " + f1.getFid());
+					System.out.println("Faculty Name: " + f1.getFname());
+					System.out.println("Faculty Course Id:" + f1.getCourse().getCid());
+					System.out.println("faculty Course Name: " + f1.getCourse().getCname());
+					System.out.println("---------FACULTY DETAILS AVAILABLE ABOVE----------");
+
+				}
+			} else {
+				System.out.println("PLEASE CHOOSE FACULTY");
+			}
+		} else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		}
+	}
+
+	public void addBatch() {
+		int fid=0;
+		if (course1 != 0) {
+			if(faculty1!=0){
+				Batch b = new Batch();
+				System.out.println("--------FILL BATCH DETAILS HERE-------------");
+				// set batch data using scanner here and add into list here
+				System.out.println("Enter Batch ID:  ");
+				int x = sc.nextInt();
+				b.setBid(x);
+				System.out.println("Enter Branch Name:  ");
+				String y = sc.next();
+				b.setBname(y);
+				System.out.println("Enter Faculty Id: ");
+				int faculty=sc.nextInt();
+
+				// NOTE: Don't use loop here to add data at a time only one data
+				// wants to add
+
+				Iterator<Faculty> itr3 = flist.iterator();
+				while (itr3.hasNext()){
+					Faculty f2 = itr3.next();
+					fid=f2.getFid();
+					if(faculty==f2.getFid()){
+						b.setFaculty(f2);
+						blist.add(b);
+						batch1++;
+						System.out.println("--------Batch details Added susccesfully-------");
+					}
+				}
+
+				if(faculty!=fid){
+					System.out.println(" Enter valid faculty ID");
+				}
+
+			}
+
+			else {
+				System.out.println("PLEASE CHOOSE FACULTY");
+			}
+		}
+		else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		}
+
+
+	}
+
+	public void viewBatch() {
+		if (course1 != 0) {
+			if(faculty1!=0){
+				if(batch1!=0){
+					Iterator<Batch> itr4 = blist.iterator();
+					while (itr4.hasNext()) {
+						Batch b1 = (Batch) itr4.next();
+						System.out.println("Batch Id: " + b1.getBid());
+						System.out.println("Batch Name: " + b1.getBname());
+						System.out.println("Course Id: " + b1.getFaculty().getCourse().getCid());
+						System.out.println("Course Name: " + b1.getFaculty().getCourse().getCname());
+						System.out.println("Faculty ID: " + b1.getFaculty().getFid());
+						System.out.println("Faculty Name: " + b1.getFaculty().getFname());
+						System.out.println("------BATCH INFORMATION AVAILABLE ABOVE-------");
+					}
+				}
+				else{
+					System.out.println("PLEASE CHOOSE BATCH");
+				}
+			}
+			else{
+				System.out.println("PLEASE CHOOSE FACULTY");
+			}
+		}
+		// get batch data using iterartor here8
+		else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		}
+	}
+
+	public void addStudent() {
+		int bid=0;
+		if (course1 != 0) {
+			if(faculty1!=0){
+				if(batch1!=0){
+					Student s = new Student();
+					System.out.println("--------FILL STUDENT DETAILS-------------");
+					// set batch data using scanner here and add into list here
+					System.out.println("Enter Student ID:  ");
+					int p = sc.nextInt();
+					s.setSid(p);
+					System.out.println("Enter Student Name:  ");
+					String q = sc.next();
+					s.setSname(q);
+					System.out.println("Enter Batch Id: ");
+					int batch_id=sc.nextInt();
+
+					Iterator<Batch> itr5 = blist.iterator();
+					while(itr5.hasNext()){
+						Batch b2 = itr5.next();
+						bid=b2.getBid();
+						if(batch_id==b2.getBid()){
+							s.setBatch(b2);
+							slist.add(s);
+							stu1++;
+							System.out.println("-----Student details Added susccesfully-------");
+						}
+					}
+					if(batch_id!=bid){
+						System.out.println(" Enter valid batch ID");
+					}
+
+
+					else{
+						System.out.println("PLEASE CHOOSE BATCH");
+					}
+				}
+				else{
+					System.out.println("PLEASE CHOOSE FACULTY");
+				}
+			}
+			// NOTE: Don't use loop here to add data at a time only one data wants
+			// to add
+			else {
+				System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+			}
+		}
+	}
+
+	public void viewStudent() {
+
+		if (course1 != 0) {
+			if(faculty1!=0){
+				if(batch1!=0){
+					if(stu1!=0){
+						Iterator<Student> itr6 = slist.iterator();
+						while (itr6.hasNext()) {
+							Student s1 = (Student) itr6.next();
+							System.out.println("Student ID: " + s1.getSid());
+							System.out.println("Student Name: " + s1.getSname());
+							System.out.println("Course ID: " + s1.getBatch().getFaculty().getCourse().getCid());
+							System.out.println("Course Name: " + s1.getBatch().getFaculty().getCourse().getCname());
+							System.out.println("Faculty ID: " + s1.getBatch().getFaculty().getFid());
+							System.out.println("Faculty Name: " + s1.getBatch().getFaculty().getFname());
+							System.out.println("Batch Name: " + s1.getBatch().getBid());
+							System.out.println("Batch ID: " + s1.getBatch().getBname());
+						}
+					}
+					else{
+						System.out.println("PLease choose student");
+					}
+				}
+				else{
+					System.out.println("PLEASE CHOOSE BATCH");
+				}
+			}else{
+				System.out.println("PLEASE CHOOSE FACULTY");
+			}
+		} else {
+			System.out.println("PLEASE SELECT YOUR COUSRSE FIRST");
+		}
+
+	}
+
+}

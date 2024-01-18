@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/directvariable_tostring/src/com/directvariable_tostring/Hosrecord.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.directvariable_tostring.Hosrecord"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="directvariable_tostring"/>
+</launchConfiguration>

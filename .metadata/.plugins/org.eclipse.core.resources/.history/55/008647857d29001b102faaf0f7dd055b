@@ -1,0 +1,31 @@
+package com.map;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class Details {
+	public Student det(){
+		Student s1=new Student();
+		s1.setRollno(2);
+		s1.setName("P");
+		return s1;
+	}
+	public void det2(Student s1){
+		Map<Integer, Student> m=new HashMap<>();
+		m.put(1, s1);
+		
+		Set<Integer> keys=m.keySet();
+		for(int key:keys){
+			System.out.println(key);
+			Student stu=m.get(key);
+			System.out.println(stu.getRollno());
+			System.out.println(stu.getName());
+		}
+		
+		
+		
+		
+	}
+
+}

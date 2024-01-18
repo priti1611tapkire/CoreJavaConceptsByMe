@@ -1,0 +1,9 @@
+package comex;
+
+public class ExceptionInInitializer {
+static{
+	String s=null;
+	System.out.println(s.length());
+	System.out.println(10/0);
+}
+}

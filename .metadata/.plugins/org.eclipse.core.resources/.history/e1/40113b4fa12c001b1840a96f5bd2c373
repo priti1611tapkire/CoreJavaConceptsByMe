@@ -1,0 +1,19 @@
+package com.map;
+
+import java.util.*;
+
+public class Test25 {
+	
+	public static void main(String[] args)
+	{
+	HashMap h=new HashMap();
+	h.put("sambha",100);
+	h.put("veeru",100);
+	h.put("durga",100);
+	System.out.println(h);
+	/*Map(i)
+	HashMap(c)
+	LinkedHashMap(c*/
+
+}
+}

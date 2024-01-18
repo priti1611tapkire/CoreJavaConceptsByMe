@@ -1,0 +1,11 @@
+package comex;
+
+public class FinalK {
+	@SuppressWarnings("null")
+	final int i=(Integer) null;
+
+	public static void main(String[] args) {
+		FinalK f=new FinalK();
+		System.out.println(f.i);
+	}
+}

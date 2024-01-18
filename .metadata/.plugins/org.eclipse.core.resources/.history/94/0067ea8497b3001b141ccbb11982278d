@@ -1,0 +1,7 @@
+package comex;
+
+public class IlligalArguException {
+	public static void main(String[] args) {
+		
+	}
+}

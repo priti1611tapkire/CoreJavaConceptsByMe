@@ -1,0 +1,12 @@
+package com.costum;
+
+public class EmsalarySort implements Comparable<Employee> {
+
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		Employee ee1=(Employee)o;
+		return (int) ee1.getSalary();
+	}
+
+}
